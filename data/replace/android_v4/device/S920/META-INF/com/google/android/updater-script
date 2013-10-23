@@ -2,8 +2,10 @@ show_progress(0.500000, 0);
 ui_print("Formatting system...");
 unmount("/system");
 format("ext4", "EMMC", "/dev/block/mmcblk0p5", "0", "/system");
+ui_print("Installing system files...");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p5", "/system");
 package_extract_dir("system", "/system");
+ui_print("Creating system links...");
 symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
 symlink("Roboto-Regular.ttf", "/system/fonts/DroidSans.ttf");
 symlink("aee_aed", "/system/bin/debuggerd");
@@ -101,6 +103,18 @@ symlink("toolbox", "/system/bin/cat", "/system/bin/chmod",
         "/system/bin/top", "/system/bin/touch", "/system/bin/umount",
         "/system/bin/uptime", "/system/bin/vmstat", "/system/bin/watchprops",
         "/system/bin/wipe");
+ui_print("Remove chinese apps...");
+delete("/system/vendor/operator/app/BaiduMap.apk",
+        "/system/vendor/operator/app/BaiduSearch.apk",
+        "/system/vendor/operator/app/Calendar365.apk",
+        "/system/vendor/operator/app/GNotes.apk",
+        "/system/vendor/operator/app/huohua_videoplayer.apk",
+        "/system/vendor/operator/app/iReader.apk",
+        "/system/vendor/operator/app/VoiceAssistant.apk");
+delete("/system/app/LewaAppStore.apk", "/system/app/LewaAppStore.odex",
+        "/system/app/LewaGameCenter.apk", "/system/app/LewaGameCenter.odex",
+        "/system/app/LewaWeather.apk", "/system/app/LewaWeather.odex");
+ui_print("Set permission...");
 set_perm_recursive(0, 0, 0755, 0644, "/system");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
 set_perm(0, 3003, 02750, "/system/bin/netcfg");
