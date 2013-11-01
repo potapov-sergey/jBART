@@ -6,10 +6,10 @@ echo Now running $0
 LOG_FILE=/data/logs/vacuum-databases.log
 
 # do nothing if less than 7 days
-busybox find $LOG_FILE -type f -mtime +7 -delete
+find $LOG_FILE -type f -mtime +7 -delete
 
 # Check to see if the sqlite3 binary exists
-SQL=`busybox which sqlite3`
+SQL=`which sqlite3`
 echo $SQL
 if [ x = "x$SQL" ] ; then
   echo "sqlite3 binary not found, exiting"
@@ -22,29 +22,29 @@ if ! test -f $LOG_FILE; then
 		rm $LOG_FILE;
 	fi;
   
-	echo "Starting Sqlite Vacuum $( date +"%m-%d-%Y %H:%M:%S" )" | busybox tee -a $LOG_FILE;
+	echo "Starting Sqlite Vacuum $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
 
 	for i in \
-	`busybox find /data -iname "*.db"`
+	`find /data -iname "*.db"`
 	do \
 		$SQL $i 'VACUUM;'; 
-		echo Vacuum $i  | busybox tee -a $LOG_FILE;
+		echo Vacuum $i  | tee -a $LOG_FILE;
 	done;
 
 	for i in \
-	`busybox find /dbdata -iname "*.db"`
+	`find /dbdata -iname "*.db"`
 	do \
 		$SQL $i 'VACUUM;'; 
-		echo Vacuum $i  | busybox tee -a $LOG_FILE;
+		echo Vacuum $i  | tee -a $LOG_FILE;
 	done;
 
 	for i in \
-	`busybox find /sdcard -iname "*.db"`
+	`find /sdcard -iname "*.db"`
 	do \
 		$SQL $i 'VACUUM;'; 
-		echo Vacuum $i  | busybox tee -a $LOG_FILE;
+		echo Vacuum $i  | tee -a $LOG_FILE;
 	done
 
-	echo "Sqlite Vacuum finished at $( date +"%m-%d-%Y %H:%M:%S" )" | busybox tee -a $LOG_FILE;
+	echo "Sqlite Vacuum finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
 
 fi
