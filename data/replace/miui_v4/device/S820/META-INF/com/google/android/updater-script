@@ -113,6 +113,7 @@ set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
 set_perm(0, 0, 06755, "/system/xbin/busybox");
 set_perm(0, 1000, 06750, "/system/xbin/shelld");
 set_perm(0, 0, 06755, "/system/xbin/su");
+delete("/system/bin/aal");
 ui_print("Update Boot image...");
 show_progress(0.200000, 0);
 show_progress(0.200000, 10);
