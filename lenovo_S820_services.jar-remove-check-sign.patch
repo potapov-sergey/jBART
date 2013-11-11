@@ -1,0 +1,12 @@
+--- baseROM/system/framework/services/com/android/server/pm/PackageManagerService.smali.orig	2013-11-11 15:47:49.760591342 +0400
++++ baseROM/system/framework/services/com/android/server/pm/PackageManagerService.smali	2013-11-11 15:52:05.302587918 +0400
+@@ -5936,6 +5936,9 @@
+ 
+     .prologue
+     .line 2493
++
++    return v0
++
+     if-nez p0, :cond_8
+ 
+     .line 2494

@@ -1,0 +1,51 @@
+--- ./apkDecompiled/Settings.apk/smali/com/mediatek/gemini/SimManagement.smali.orig	2013-11-07 09:45:03.903513153 +0400
++++ ./apkDecompiled/Settings.apk/smali/com/mediatek/gemini/SimManagement.smali	2013-11-07 09:45:39.735512673 +0400
+@@ -5705,7 +5705,7 @@
+     .line 315
+     const-string v2, "SimManagementSettings"
+ 
+-    const-string v3, "MTK_VT3G324M_SUPPORT=falseMTK_GEMINI_3G_SWITCH=false"
++    const-string v3, "MTK_VT3G324M_SUPPORT=falseMTK_GEMINI_3G_SWITCH=true"
+ 
+     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+ 
+@@ -5752,7 +5752,7 @@
+     .line 325
+     const-string v2, "SimManagementSettings"
+ 
+-    const-string v3, "FeatureOption.MTK_GEMINI_3G_SWITCH=false"
++    const-string v3, "FeatureOption.MTK_GEMINI_3G_SWITCH=true"
+ 
+     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+ 
+--- ./apkDecompiled/Phone.apk/smali/com/mediatek/phone/PhoneFeatureConstants$FeatureOption.smali.orig	2013-11-07 09:46:41.529511845 +0400
++++ ./apkDecompiled/Phone.apk/smali/com/mediatek/phone/PhoneFeatureConstants$FeatureOption.smali	2013-11-07 09:47:01.630511576 +0400
+@@ -31,7 +31,7 @@
+ 
+ .field public static final MTK_FLIGHT_MODE_POWER_OFF_MD:Z = true
+ 
+-.field public static final MTK_GEMINI_3G_SWITCH:Z = false
++.field public static final MTK_GEMINI_3G_SWITCH:Z = true
+ 
+ .field public static final MTK_GEMINI_ENHANCEMENT:Z = true
+ 
+--- ./apkDecompiled/LenovoSettings.apk/smali/com/mediatek/gemini/SimManagement.smali.orig	2013-11-07 09:47:51.384510909 +0400
++++ ./apkDecompiled/LenovoSettings.apk/smali/com/mediatek/gemini/SimManagement.smali	2013-11-07 09:48:13.988510606 +0400
+@@ -6122,7 +6122,7 @@
+     .line 332
+     const-string v2, "SimManagementSettings"
+ 
+-    const-string v3, "MTK_VT3G324M_SUPPORT=trueMTK_GEMINI_3G_SWITCH=false"
++    const-string v3, "MTK_VT3G324M_SUPPORT=trueMTK_GEMINI_3G_SWITCH=true"
+ 
+     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+ 
+@@ -6187,7 +6187,7 @@
+     .line 348
+     const-string v2, "SimManagementSettings"
+ 
+-    const-string v3, "FeatureOption.MTK_GEMINI_3G_SWITCH=false"
++    const-string v3, "FeatureOption.MTK_GEMINI_3G_SWITCH=true"
+ 
+     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+ 
