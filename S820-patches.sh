@@ -17,19 +17,27 @@ PROJDIR="$1"
 
 PATCH0=lenovo_S820_services.jar-remove-check-sign.patch
 PATCH1=lenovo_S820_MTK_GEMINI_3G_SWITCH.patch
+PATCH2=lenovo_S820_rotation.patch
 
 cp "$PATCH0" "$PROJDIR"
 cp "$PATCH1" "$PROJDIR"
+cp "$PATCH2" "$PROJDIR"
 
 cd "$PROJDIR"
-# decompile 
-baksmali -o baseROM/system/framework/services baseROM/system/framework/services.jar
-# patch signature check
-patch -p0 < "$PATCH0"
-# patch MTK_GEMINI_3G_SWITCH (IMO it doesn't works)
-patch -p0 < "$PATCH1"
+# backup services.jar
+cp baseROM/system/framework/services.jar .
+# decompile services.jar 
+baksmali -a17 -l -b -o baseROM/system/framework/services baseROM/system/framework/services.jar
+
+for PATCH in "$PATCH0" "$PATCH1" "$PATCH2" ; do
+    patch -p0 < $PATCH
+    if [ "$?" != 0 ] ; then
+        exit 1
+    fi
+done
+
 # compile services
-smali -o baseROM/system/framework/classes.dex baseROM/system/framework/services
+smali -a17 -o baseROM/system/framework/classes.dex baseROM/system/framework/services
 # pack into jar
 cd baseROM/system/framework
 zip -1 -r services.jar classes.dex
