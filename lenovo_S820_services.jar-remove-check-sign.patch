@@ -1,121 +1,14 @@
---- baseROM/system/framework/services/com/android/server/pm/PackageManagerService.smali.orig	2013-11-11 17:48:10.960494595 +0400
-+++ baseROM/system/framework/services/com/android/server/pm/PackageManagerService.smali	2013-11-11 17:48:17.286494510 +0400
-@@ -5936,34 +5936,39 @@
+--- baseROM/system/framework/services/com/android/server/pm/PackageManagerService.smali.orig	2013-11-11 17:24:53.168513322 +0400
++++ baseROM/system/framework/services/com/android/server/pm/PackageManagerService.smali	2013-11-11 17:26:11.333512275 +0400
+@@ -5936,6 +5936,11 @@
  
      .prologue
      .line 2493
--    if-nez p0, :cond_8
 +
 +    const/4 v0, 0x0
 +
 +    return v0
 +
-+    if-nez p0, :cond_9
+     if-nez p0, :cond_8
  
      .line 2494
--    if-nez p1, :cond_6
-+    if-nez p1, :cond_7
- 
-     const/4 v6, 0x1
- 
-     .line 2513
--    :goto_5
-+    :goto_6
-     return v6
- 
-     .line 2494
--    :cond_6
-+    :cond_7
-     const/4 v6, -0x1
- 
--    goto :goto_5
-+    goto :goto_6
- 
-     .line 2498
--    :cond_8
--    if-nez p1, :cond_c
-+    :cond_9
-+    if-nez p1, :cond_d
- 
-     .line 2499
-     const/4 v6, -0x2
- 
--    goto :goto_5
-+    goto :goto_6
- 
-     .line 2501
--    :cond_c
-+    :cond_d
-     new-instance v3, Ljava/util/HashSet;
- 
-     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
-@@ -5979,8 +5984,8 @@
-     const/4 v1, 0x0
- 
-     .local v1, "i$":I
--    :goto_14
--    if-ge v1, v2, :cond_1e
-+    :goto_15
-+    if-ge v1, v2, :cond_1f
- 
-     aget-object v5, v0, v1
- 
-@@ -5991,11 +5996,11 @@
-     .line 2502
-     add-int/lit8 v1, v1, 0x1
- 
--    goto :goto_14
-+    goto :goto_15
- 
-     .line 2505
-     .end local v5    # "sig":Landroid/content/pm/Signature;
--    :cond_1e
-+    :cond_1f
-     new-instance v4, Ljava/util/HashSet;
- 
-     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
-@@ -6008,8 +6013,8 @@
- 
-     const/4 v1, 0x0
- 
--    :goto_26
--    if-ge v1, v2, :cond_30
-+    :goto_27
-+    if-ge v1, v2, :cond_31
- 
-     aget-object v5, v0, v1
- 
-@@ -6020,27 +6025,27 @@
-     .line 2506
-     add-int/lit8 v1, v1, 0x1
- 
--    goto :goto_26
-+    goto :goto_27
- 
-     .line 2510
-     .end local v5    # "sig":Landroid/content/pm/Signature;
--    :cond_30
-+    :cond_31
-     invoke-virtual {v3, v4}, Ljava/util/HashSet;->equals(Ljava/lang/Object;)Z
- 
-     move-result v6
- 
--    if-eqz v6, :cond_38
-+    if-eqz v6, :cond_39
- 
-     .line 2511
-     const/4 v6, 0x0
- 
--    goto :goto_5
-+    goto :goto_6
- 
-     .line 2513
--    :cond_38
-+    :cond_39
-     const/4 v6, -0x3
- 
--    goto :goto_5
-+    goto :goto_6
- .end method
- 
- .method static compareStrings(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
