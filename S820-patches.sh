@@ -29,6 +29,7 @@ cp baseROM/system/framework/services.jar .
 # decompile services.jar 
 baksmali -a17 -l -b -o baseROM/system/framework/services baseROM/system/framework/services.jar
 
+# apply patches
 for PATCH in "$PATCH0" "$PATCH1" "$PATCH2" ; do
     patch -p0 < $PATCH
     if [ "$?" != 0 ] ; then
