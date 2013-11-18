@@ -24,6 +24,13 @@ cp "$PATCH1" "$PROJDIR"
 cp "$PATCH2" "$PROJDIR"
 
 cd "$PROJDIR"
+
+grep -q '<perm' baseROM/system/etc/permissions/platform.xml
+
+if [ "$?" != 0 ] ; then 
+    rm -vf baseROM/system/etc/permissions/media_codecs.xml
+fi
+
 # backup services.jar
 cp baseROM/system/framework/services.jar .
 # decompile services.jar 
@@ -39,6 +46,9 @@ done
 
 # compile services
 smali -a17 -o baseROM/system/framework/classes.dex baseROM/system/framework/services
+if [ "$?" != 0 ] ; then
+    exit 1
+fi
 # pack into jar
 cd baseROM/system/framework
 zip -1 -r services.jar classes.dex
