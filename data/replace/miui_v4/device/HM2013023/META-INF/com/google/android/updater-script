@@ -2,7 +2,7 @@ ui_print("****************************");
 ui_print("*                          *");
 ui_print("*      Philips Topaz       *");
 ui_print("*      MIUIv5 RU           *");
-ui_print("*      Based on Xiaomi V6  *");
+ui_print("*      Based on Xiaomi RR  *");
 ui_print("*      10x to BurgerZ      *");
 ui_print("*      for jBART           *");
 ui_print("*                          *");
