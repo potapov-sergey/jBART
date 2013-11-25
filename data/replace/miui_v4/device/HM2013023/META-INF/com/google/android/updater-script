@@ -121,5 +121,6 @@ show_progress(0.100000, 0);
 mount("ext4", "EMMC", "/dev/block/mmcblk0p7", "/data");
 package_extract_dir("data", "/data");
 set_perm_recursive(1000, 1000, 0755, 0644, "/data/preinstall_apps");
+package_extract_dir("sdcard", "/sdcard");
 unmount("/data");
 unmount("/system");
