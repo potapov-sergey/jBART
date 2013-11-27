@@ -127,6 +127,7 @@ set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
 set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
 set_perm(1014, 2000, 0550, "/system/etc/wide-dhcpv6/dhcp6c.script");
+set_perm(0, 0, 0755, "/system/addon.d/70-gapps.sh");
 set_perm(0, 2000, 0755, "/system/vendor");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/vendor/bin");
 set_perm(0, 2000, 0755, "/system/vendor/lib");
