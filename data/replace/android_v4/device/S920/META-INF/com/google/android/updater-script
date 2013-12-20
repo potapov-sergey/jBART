@@ -9,6 +9,7 @@ ui_print("Creating system links...");
 symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
 symlink("Roboto-Regular.ttf", "/system/fonts/DroidSans.ttf");
 symlink("aee_aed", "/system/bin/debuggerd");
+symlink("bootanimation.zip", "/system/media/shutanimation.zip");
 symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
         "/system/xbin/adjtimex", "/system/xbin/arp", "/system/xbin/ash",
         "/system/xbin/awk", "/system/xbin/base64", "/system/xbin/basename",
