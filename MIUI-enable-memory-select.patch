@@ -1,0 +1,20 @@
+--- apkDecompiled/Settings.apk/smali/com/android/settings/deviceinfo/Memory.smali.orig	2014-01-20 12:33:59.022844356 +0400
++++ apkDecompiled/Settings.apk/smali/com/android/settings/deviceinfo/Memory.smali	2014-01-20 12:32:04.042840677 +0400
+@@ -1491,7 +1491,7 @@
+ 
+     iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory;->yp:Landroid/preference/PreferenceCategory;
+ 
+-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
++    #invoke-virtual {v0, v1}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
+ 
+     .line 212
+     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
+@@ -1955,7 +1955,7 @@
+ 
+     iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory;->ys:Landroid/preference/ListPreference;
+ 
+-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
++    #invoke-virtual {v0, v1}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
+ 
+     .line 313
+     :goto_5
