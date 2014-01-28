@@ -1,0 +1,11 @@
+--- apkDecompiled/LewaGallery2.apk/smali/com/android/camera/manager/SettingManager.smali.orig	2014-01-28 17:10:21.198493473 +0400
++++ apkDecompiled/LewaGallery2.apk/smali/com/android/camera/manager/SettingManager.smali	2014-01-28 17:10:48.348494342 +0400
+@@ -1352,7 +1352,7 @@
+ 
+     .line 330
+     :pswitch_0
+-    invoke-direct {p0}, Lcom/android/camera/manager/SettingManager;->addWeatherItem()V
++    #invoke-direct {p0}, Lcom/android/camera/manager/SettingManager;->addWeatherItem()V
+ 
+     .line 331
+     invoke-static {}, Lcom/android/camera/CameraHolder;->instance()Lcom/android/camera/CameraHolder;
